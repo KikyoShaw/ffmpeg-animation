@@ -10,6 +10,7 @@ class ffAnimationTest : public QWidget
 public:
     ffAnimationTest(QWidget *parent = Q_NULLPTR);
 
+
 private:
     Ui::ffAnimationTestClass ui;
 };
