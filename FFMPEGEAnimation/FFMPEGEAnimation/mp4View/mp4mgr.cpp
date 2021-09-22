@@ -1,6 +1,7 @@
 #include "mp4mgr.h"
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QNetworkConfiguration>
 
 Mp4Mgr & Mp4Mgr::getInstance()
 {
@@ -85,6 +86,7 @@ void Mp4Mgr::loadAlphaMp4(const QString &url, const QString& saveFolder, bool bD
 	QNetworkRequest request;
 	request.setUrl(QUrl(url));
 	request.setHeader(QNetworkRequest::UserAgentHeader, "RT-Thread ART");
+	m_networkManager.activeConfiguration();
 	auto reply = m_networkManager.get(request);
 	qInfo() << "start download mp4" << url << strFilePath;
 	//保存图片到本地
