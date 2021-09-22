@@ -21,6 +21,12 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="ff">
+      <UniqueIdentifier>{0e03df39-7a3a-4301-a6a5-aa42a4313a6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mp4View">
+      <UniqueIdentifier>{e210e872-0b41-409e-8c21-0dbc05aa2455}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="ffAnimationTest.qrc">
@@ -40,5 +46,39 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ff\FFDecodeVideo.cpp">
+      <Filter>ff</Filter>
+    </ClCompile>
+    <ClCompile Include="ff\stdafx.cpp">
+      <Filter>ff</Filter>
+    </ClCompile>
+    <ClCompile Include="mp4View\MP4View.cpp">
+      <Filter>mp4View</Filter>
+    </ClCompile>
+    <ClCompile Include="mp4View\VideoMovieUtils.cpp">
+      <Filter>mp4View</Filter>
+    </ClCompile>
+    <ClCompile Include="mp4View\mp4mgr.cpp">
+      <Filter>mp4View</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ff\stdafx.h">
+      <Filter>ff</Filter>
+    </ClInclude>
+    <ClInclude Include="ff\targetver.h">
+      <Filter>ff</Filter>
+    </ClInclude>
+    <ClInclude Include="mp4View\VideoMovieUtils.h">
+      <Filter>mp4View</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="mp4View\MP4View.h">
+      <Filter>mp4View</Filter>
+    </QtMoc>
+    <QtMoc Include="mp4View\mp4mgr.h">
+      <Filter>mp4View</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>

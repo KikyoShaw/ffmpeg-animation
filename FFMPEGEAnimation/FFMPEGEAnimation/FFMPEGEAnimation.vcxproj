@@ -32,12 +32,12 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="QtSettings">
     <QtInstall>Qt5.12.11_msvc2017_32</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;gui;network;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="QtSettings">
     <QtInstall>Qt5.12.11_msvc2017_32</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;gui;network;widgets</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -60,7 +60,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)FFMPEGEAnimation\ffmpeg\include;$(SolutionDir)FFMPEGEAnimation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FFMPEGEAnimation\ffmpeg\include;$(SolutionDir)FFMPEGEAnimation\mp4View;$(SolutionDir)FFMPEGEAnimation\ff;$(SolutionDir)FFMPEGEAnimation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)FFMPEGEAnimation\ffmpeg\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -70,7 +70,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)FFMPEGEAnimation\ffmpeg\include;$(SolutionDir)FFMPEGEAnimation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FFMPEGEAnimation\ffmpeg\include;$(SolutionDir)FFMPEGEAnimation\mp4View;$(SolutionDir)FFMPEGEAnimation\ff;$(SolutionDir)FFMPEGEAnimation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)FFMPEGEAnimation\ffmpeg\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -105,11 +105,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="mp4View\mp4mgr.cpp" />
+    <ClCompile Include="mp4View\MP4View.cpp" />
+    <ClCompile Include="mp4View\VideoMovieUtils.cpp" />
     <QtRcc Include="ffAnimationTest.qrc" />
     <QtUic Include="ffAnimationTest.ui" />
     <QtMoc Include="ffAnimationTest.h" />
     <ClCompile Include="ffAnimationTest.cpp" />
+    <ClCompile Include="ff\FFDecodeVideo.cpp" />
+    <ClCompile Include="ff\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ff\stdafx.h" />
+    <ClInclude Include="ff\targetver.h" />
+    <QtMoc Include="mp4View\mp4mgr.h" />
+    <ClInclude Include="mp4View\VideoMovieUtils.h" />
+    <QtMoc Include="mp4View\MP4View.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
