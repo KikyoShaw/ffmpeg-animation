@@ -9,7 +9,7 @@ class ffAnimationTest : public QWidget
 
 public:
     ffAnimationTest(QWidget *parent = Q_NULLPTR);
-
+	~ffAnimationTest();
 
 private:
     Ui::ffAnimationTestClass ui;
