@@ -11,6 +11,9 @@ public:
     ffAnimationTest(QWidget *parent = Q_NULLPTR);
 	~ffAnimationTest();
 
+private slots:
+	void sltVideoToImage();
+
 private:
     Ui::ffAnimationTestClass ui;
 };

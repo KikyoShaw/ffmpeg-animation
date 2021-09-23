@@ -49,9 +49,6 @@
     <ClCompile Include="ff\FFDecodeVideo.cpp">
       <Filter>ff</Filter>
     </ClCompile>
-    <ClCompile Include="ff\stdafx.cpp">
-      <Filter>ff</Filter>
-    </ClCompile>
     <ClCompile Include="mp4View\MP4View.cpp">
       <Filter>mp4View</Filter>
     </ClCompile>
@@ -63,14 +60,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ff\stdafx.h">
-      <Filter>ff</Filter>
-    </ClInclude>
-    <ClInclude Include="ff\targetver.h">
-      <Filter>ff</Filter>
-    </ClInclude>
     <ClInclude Include="mp4View\VideoMovieUtils.h">
       <Filter>mp4View</Filter>
+    </ClInclude>
+    <ClInclude Include="ff\FFDecodeVideo.h">
+      <Filter>ff</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
